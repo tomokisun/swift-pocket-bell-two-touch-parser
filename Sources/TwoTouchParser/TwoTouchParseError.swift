@@ -7,7 +7,7 @@ public enum TwoTouchParseError: Error {
   case outOfRange
   
   /// No corresponding character was found in the mapping table.
-  case characterNotFound
+  case characterNotFound(Character)
 }
 
 extension TwoTouchParseError: CustomDebugStringConvertible {
@@ -19,8 +19,8 @@ extension TwoTouchParseError: CustomDebugStringConvertible {
     case .outOfRange:
       return "Out of range error: The input values exceed the mapping table boundaries. Please ensure the input follows the valid format and range."
       
-    case .characterNotFound:
-      return "Character not found: No character corresponds to the given input values in the mapping table. Verify that the mapping table is correctly configured."
+    case let .characterNotFound(character):
+          return "Character not found: No character corresponds to the given input value '\(character)' in the mapping table. Verify that the mapping table is correctly configured and the character is supported."
     }
   }
 }

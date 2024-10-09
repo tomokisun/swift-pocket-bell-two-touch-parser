@@ -30,7 +30,7 @@ open class TwoTouchEncoder {
       
       // If the character is not found in the mapping table, throw an error
       if !found {
-        throw TwoTouchParseError.characterNotFound
+        throw TwoTouchParseError.characterNotFound(character)
       }
     }
     
