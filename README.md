@@ -8,16 +8,16 @@ The following table shows the character mapping for each combination of row and 
 
 | Two Touch | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 |
 |-----------|---|---|---|---|---|---|---|---|---|---|
-| 1         | あ | い | う | え | お | A | B | C | D | E |
-| 2         | か | き | く | け | こ | F | G | H | I | J |
-| 3         | さ | し | す | せ | そ | K | L | M | N | O |
-| 4         | た | ち | つ | て | と | P | Q | R | S | T |
-| 5         | な | に | ぬ | ね | の | U | V | W | X | Y |
-| 6         | は | ひ | ふ | へ | ほ | Z | ? | ! | ー | / |
-| 7         | ま | み | む | め | も | ¥ | & | ● | ● | ● |
-| 8         | や | （ | ゆ | ） | よ | * | # | 空白 | ● | ● |
-| 9         | ら | り | る | れ | ろ | 1 | 2 | 3 | 4 | 5 |
-| 0         | わ | を | ん | ゛ | 。 | 6 | 7 | 8 | 9 | 0 |
+| 1 | ア   | イ   | ウ   | エ   | オ   | A | B | C   | D | E |
+| 2 | カ   | キ   | ク   | ケ   | コ   | F | G | H   | I | J |
+| 3 | サ   | シ   | ス   | セ   | ソ   | K | L | M   | N | O |
+| 4 | タ   | チ   | ツ   | テ   | ト   | P | Q | R   | S | T |
+| 5 | ナ   | ニ   | ヌ   | ネ   | ノ   | U | V | W   | X | Y |
+| 6 | ハ   | ヒ   | フ   | ヘ   | ホ   | Z | ? | !   | ー | / |
+| 7 | マ   | ミ   | ム   | メ   | モ   | ¥ | & | ●   | ● | ● |
+| 8 | ヤ   | （   | ユ   | ）   | ヨ   | * | # | 空白 | ● | ● |
+| 9 | ラ   | リ   | ル   | レ   | ロ   | 1 | 2 | 3   | 4 | 5 |
+| 0 | ワ   | ヲ   | ン   | ゛   | 。   | 6 | 7 | 8   | 9 | 0 |
 
 ### How to Use the Two Touch System
 To use the Pocket Bell Two Touch system:
@@ -25,8 +25,8 @@ To use the Pocket Bell Two Touch system:
 2. Press the number corresponding to the column (1 through 0).
    
 For example:
-- To enter "あ", press `1` followed by `1`.
-- To enter "き", press `2` followed by `2`.
+- To enter "ア", press `1` followed by `1`.
+- To enter "キ", press `2` followed by `2`.
 - To enter "空白" (space), press `8` followed by `8`.
 
 This method allows users to efficiently input a wide range of characters and symbols with just a numeric keypad.
@@ -45,7 +45,7 @@ The `TwoTouchDecoder` converts a numeric string into its corresponding character
 do {
     let decoder = TwoTouchDecoder()
     let decodedText = try decoder.decode(from: "1112324493")
-    print(decodedText) // Output: "あいしてる"
+    print(decodedText) // Output: "アイシテル"
 } catch {
     print("Decoding error: \(error)")
 }
@@ -65,7 +65,7 @@ The `TwoTouchEncoder` converts a string of characters into its corresponding num
 ```swift
 do {
     let encoder = TwoTouchEncoder()
-    let encodedText = try encoder.encode(from: "あいしてる")
+    let encodedText = try encoder.encode(from: "アイシテル")
     print(encodedText) // Output: "1112324493"
 } catch {
     print("Encoding error: \(error)")
